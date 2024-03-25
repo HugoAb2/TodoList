@@ -7,12 +7,18 @@ Este projeto é uma aplicação de lista de tarefas (TodoList) desenvolvida como
 - Spring Boot para o backend
 - Docker para a containerização
 
-## Instalação
+## Como Executar o Projeto
 
-Antes de começar, certifique-se de ter o Node.js, o Java Development Kit (JDK) e o Docker instalados em sua máquina.
+1. Clone este repositório.
+2. Navegue até a pasta do projeto.
+3. Execute o comando `docker-compose up`.
 
-### Frontend (Vue.js)
+## Funcionalidades
 
-1. Navegue até o diretório `frontend`:
-   ```bash
-   cd frontend
+Este projeto implementa um CRUD (Create, Read, Update, Delete) para gerenciar as tarefas. As funcionalidades incluem:
+
+- Adicionar uma nova tarefa.
+- Visualizar as tarefas existentes.
+- Atualizar o status de uma tarefa para concluída.
+- Excluir uma tarefa.
+
