@@ -7,7 +7,7 @@ Este projeto é uma aplicação de lista de tarefas (TodoList) desenvolvida como
 - Spring Boot para o backend
 - Docker para a containerização
 
-Para ver mais sobre o processo de desenvolvimento abra a sessão de Issues e Milestones
+Para ver mais sobre o processo de desenvolvimento abra a sessão de <span style="color: blue;">Issues</span> e <span style="color: green;">"Milestones</span>
 
 ## Funcionalidades
 
