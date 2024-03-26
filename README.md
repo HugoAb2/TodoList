@@ -45,5 +45,5 @@ Este projeto implementa um CRUD (Create, Read, Update, Delete) para gerenciar as
 - Deve haver um Dockerfile que define como construir a imagem Docker.
 - Deve haver um docker-compose.yml que define como executar o aplicativo.
 
-![Representação visual dos componentes da aplicação]([(https://bezkoder.com/wp-content/uploads/2019/12/spring-boot-vue-js-crud-example-architecture.png)https://bezkoder.com/wp-content/uploads/2019/12/spring-boot-vue-js-crud-example-architecture.png])
+![Representação visual dos componentes da aplicação](https://bezkoder.com/wp-content/uploads/2019/12/spring-boot-vue-js-crud-example-architecture.png)
 
