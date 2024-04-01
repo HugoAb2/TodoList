@@ -36,11 +36,13 @@ public class TodoController {
         Todo newTodo = new Todo(timestamp, todoText, false);
         return todoService.create(newTodo);
     }
+    //curl -X POST -H "Content-Type: application/json" -d 'Minha descricao' "http://localhost:8080/todos"
 
     @GetMapping
     List<Todo> list() {
         return todoService.list();
     }
+    //curl -s http://localhost:8080/todos | python3 -m json.tool
 
     @PutMapping
     List<Todo> update(@RequestBody long id, String description, Boolean done) {
