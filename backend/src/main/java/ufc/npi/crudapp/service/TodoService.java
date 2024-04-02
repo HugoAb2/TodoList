@@ -28,10 +28,10 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public List<Todo> update(@NotNull Todo todo) {
+    public Todo update(@NotNull Todo todo) {
         if (todo != null)
             todoRepository.save(todo);
-        return list();
+        return todo;
     }
 
     public List<Todo> delete(@NotNull Long id) {

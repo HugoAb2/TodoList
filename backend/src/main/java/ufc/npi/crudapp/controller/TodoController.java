@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,10 +45,14 @@ public class TodoController {
     }
     //curl -s http://localhost:8080/todos | python3 -m json.tool
 
-    @PutMapping
-    List<Todo> update(@RequestBody long id, String description, Boolean done) {
-        Todo todo = new Todo(id, description, done);
-        return todoService.update(todo);
+     @PutMapping("/{id}")
+    public ResponseEntity<Todo> updateTodo(@PathVariable long id, @RequestBody Todo updatedTodo) {
+        try {
+            Todo todo = todoService.update(updatedTodo);
+            return ResponseEntity.ok(todo);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
