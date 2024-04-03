@@ -21,14 +21,17 @@ Este projeto implementa um CRUD (Create, Read, Update, Delete) para gerenciar as
 ## Como Executar o Projeto
 
 1. Clone este repositório.
-2. Para acessar iniciar e acessar o banco de dados no Docker container execute: 
+2. Para acessar iniciar o banco de dados no Docker container abra o terminal na pasta backend e execute: 
+ ```bash
+    sudo docker-compose up -d
+ ```
  ```bash
     sudo docker start c1
  ```
- ```bash
-    docker exec -it c1 mysql -uroot -p 
- ```
-3. Navegue até a pasta do projeto java e execute.
+3. Navegue até a pasta do projeto java e execute a classe:
+```java
+   public class CrudappApplication
+```
 4. Em um terminal separado navegue ate a pasta frontend e execute:
  ```bash
     npm run dev
