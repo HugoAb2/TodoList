@@ -21,16 +21,18 @@ Este projeto implementa um CRUD (Create, Read, Update, Delete) para gerenciar as
 ## Como Executar o Projeto
 
 1. Clone este repositório.
-2. Navegue até a pasta do projeto java e execute.
-3. Em um terminal separado navegue ate a pasta frontend e execute:
+2. Para acessar iniciar e acessar o banco de dados no Docker container execute: 
  ```bash
-    npm run dev
+    sudo docker start c1
  ```
-4. Para acessar o banco de dados no Docker container execute: 
  ```bash
     docker exec -it c1 mysql -uroot -p 
  ```
-
+3. Navegue até a pasta do projeto java e execute.
+4. Em um terminal separado navegue ate a pasta frontend e execute:
+ ```bash
+    npm run dev
+ ```
 ## Requisitos do Projeto TodoList
 
 ### 1. Frontend (Vue3)
