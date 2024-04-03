@@ -26,13 +26,14 @@
                 :key="todo.id"
             >
                 <label>
-                <input type="checkbox" v-model="todo.done" @change="doOrDoneCheck(todo)"/>
+                <input type="checkbox" v-model="todo.done" @change="updateTodo(todo)"/>
                 </label>
                 <div class="todo-content">
                 <input type="text" v-model="todo.description" readonly/>
                 </div>
                 <div class="actions">
                 <button class="delete" @click="deleteTodo(todo)">Delete</button>
+                
                 </div>
             </div>
             </div>
@@ -95,34 +96,28 @@
     }
     
     async function deleteTodo(todo) {
-    try {
-        const response = await axios.delete(`http://localhost:8080/todos/${todo.id}`);
-        if (response && response.status === 204) {
-            getTodos();
-        } else console.log(response.status);
-    } catch (error) {
-        console.error('Erro ao excluir o todo:', error);
-    }
-
-    async function updateTodo(todo, status) {
         try {
-            const updatedTodo = { ...todo, done: status };
-            const response = await axios.put(`http://localhost:8080/todos/${todo.id}`, updatedTodo);
-            if (response && response.data) {
-                console.log("updated");
-            } else {
-                console.error('Resposta do servidor está vazia ou não contém dados.', response);
-            }
+            const response = await axios.delete(`http://localhost:8080/todos/${todo.id}`);
+            if (response && response.status === 204) {
+                getTodos();
+            } else console.log(response.status);
         } catch (error) {
-            console.error('Erro ao atualizar o todo:', error);
+            console.error('Erro ao excluir o todo:', error);
         }
     }
-}
-    
-function doOrDoneCheck(){
-        console.log("ok");
-        updateTodo(todo.value, todo.value.done);
+
+    async function updateTodo(todo) {
+    try {
+        const response = await axios.put(`http://localhost:8080/todos/${todo.id}`, todo);
+        if (response && response.data) {
+            console.log("updated");
+        } else {
+            console.error('Resposta do servidor está vazia ou não contém dados.', response);
+        }
+    } catch (error) {
+        console.error('Erro ao atualizar o todo:', error);
     }
+}
 
 watch(
     todos,

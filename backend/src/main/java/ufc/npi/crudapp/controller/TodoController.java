@@ -49,6 +49,7 @@ public class TodoController {
     public ResponseEntity<Todo> updateTodo(@PathVariable long id, @RequestBody Todo updatedTodo) {
         try {
             Todo todo = todoService.update(updatedTodo);
+            
             return ResponseEntity.ok(todo);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
